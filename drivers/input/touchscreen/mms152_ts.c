@@ -1108,12 +1108,7 @@ static irqreturn_t mms_ts_interrupt(int irq, void *dev_id)
 		if (mms_ts_suspended) {
 			if (knockon) {
 				if (touch_is_pressed == 0) {
-					if (knockon_reset) {
-						knockon_reset = false;
 						touch_press();
-					} else {
-						knockon_reset = true;
-					}
 				}
 			} else {
 				touch_press();
